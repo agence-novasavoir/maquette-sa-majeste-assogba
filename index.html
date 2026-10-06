@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Majesté Assogba - Roi Mondial de la Paix</title>
+    <meta name="description" content="Site officiel de SA Majesté Assogba, Roi Mondial de la Paix. Médecine traditionnelle, spiritualité et astuces de grande mère à Abomey-Calavi, Bénin.">
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bleu-nuit: #0A2540;
+            --or: #D4AF37;
+            --vert-nature: #2E7D32;
+            --fond-clair: #F8F9FA;
+            --texte-fonce: #333333;
+            --texte-clair: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--fond-clair);
+            color: var(--texte-fonce);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: var(--or);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--texte-clair);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--or);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--texte-clair);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.8)), url('sa.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+            color: var(--texte-clair);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--or);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--vert-nature);
+            color: var(--texte-clair);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1B5E20;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.6);
+        }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--bleu-nuit);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--or);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- À PROPOS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text .highlight {
+            color: var(--vert-nature);
+            font-weight: bold;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- SERVICES --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--texte-clair);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--or);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--bleu-nuit);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* --- PHILOSOPHIE / CITATION --- */
+        .philosophy {
+            background-color: var(--bleu-nuit);
+            color: var(--texte-clair);
+            text-align: center;
+            border-radius: 15px;
+            margin: 2rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .philosophy blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.8;
+        }
+
+        .philosophy cite {
+            color: var(--or);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* --- CONTACT --- */
+        .contact-container {
+            text-align: center;
+            background: var(--texte-clair);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bleu-nuit);
+            color: var(--texte-clair);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bleu-nuit);
+                padding: 1rem 0;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .philosophy blockquote {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">SA Majesté Assogba</div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>SA Majesté Assogba</h1>
+            <h2>Roi Mondial de la Paix · Guide Spirituel</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Médecine traditionnelle et spiritualité au service de votre bien-être.</p>
+            <a href="https://wa.me/22997879543" class="btn-whatsapp" target="_blank">📱 Contactez-moi sur WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos">
+        <h2 class="section-title">À propos de Sa Majesté</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Natif de <strong>Dassa-Zoumé</strong> et installé à <strong>Abomey-Calavi</strong>, SA Majesté Assogba est un guide spirituel et praticien de la médecine traditionnelle reconnu. Surnommé le <strong>« Roi Mondial de la Paix »</strong>, il met son savoir ancestral au service de la communauté.</p>
+                <p>À travers son <strong>Centre de médecine traditionnelle et de la spiritualité</strong>, il propose des consultations privées, des accompagnements spirituels et partage ses fameuses <strong>« Astuces de Grande Mère »</strong>.</p>
+                <p>Sa philosophie est simple : la richesse et le bien-être viennent de Dieu, mais nécessitent une base spirituelle solide et un travail acharné. Il prône une approche inclusive, rappelant que la <strong>Divinité Dan</strong> (divinité de la richesse) n'est pas liée au fétichisme et peut accompagner chacun, qu'il soit chrétien, musulman ou autre.</p>
+                <a href="https://wa.me/22997879543" class="btn-whatsapp" style="margin-top: 1rem; padding: 0.8rem 1.5rem; font-size: 1rem;" target="_blank">Prendre rendez-vous</a>
+            </div>
+            <div class="about-image">
+                <img src="sb.jpeg" alt="SA Majesté Assogba en tenue traditionnelle">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="background-color: #f0f4f8;">
+        <h2 class="section-title">Domaines d'Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Médecine Traditionnelle</h3>
+                <p>Consultations et soins à base de plantes et de savoirs ancestraux pour retrouver la santé et l'équilibre naturel.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔮</div>
+                <h3>Accompagnement Spirituel</h3>
+                <p>Protection spirituelle, rituels de paix et guidance pour surmonter les blocages et attirer la chance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Les Astuces de Grande Mère</h3>
+                <p>Des conseils pratiques et quotidiens pour améliorer votre vitalité, votre prospérité et votre bien-être général.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHIE -->
+    <section class="philosophy">
+        <blockquote>
+            « La divinité Dan est une divinité de richesse. Tu peux être chrétien, musulman ou autre et avoir la divinité Dan sans même le savoir. La richesse vient de Dieu, mais ça se mérite par une bataille spirituelle. »
+        </blockquote>
+        <cite>— SA Majesté Assogba</cite>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Contact & Localisation</h2>
+        <div class="contact-container">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Pour toute consultation privée, question spirituelle ou demande de conseil personnalisé, contactez directement Sa Majesté.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📱</span> <strong>WhatsApp :</strong> +229 97 87 95 43
+                </div>
+                <div class="contact-item">
+                    <span>📍</span> <strong>Localisation :</strong> Abomey-Calavi, Bénin
+                </div>
+            </div>
+
+            <a href="https://wa.me/22997879543" class="btn-whatsapp" style="font-size: 1.3rem; padding: 1.2rem 3rem;" target="_blank">💬 Discuter sur WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 SA Majesté Assogba. Tous droits réservés.</p>
+        <p>Conçu avec respect et prestige.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Menu Mobile Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fermer le menu lors du clic sur un lien (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Animation simple au défilement (Fade-in)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Appliquer l'animation aux cartes de services
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
